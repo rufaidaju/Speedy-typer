@@ -5,7 +5,9 @@ const startButton = document.getElementById('startButton');
 const typerA = document.getElementById('typer_a');
 const typerB = document.getElementById('typer_b');
 const typeA=document.getElementById('typeA');
-const typeB=document.getElementById('typeB');
+const typeB = document.getElementById('typeB');
+const sentence = document.getElementById('sentence');
+const textA = document.getElementById('typer_a');
 
 const senteces =[
 'Everything happens for me, not to me.',
@@ -20,31 +22,33 @@ const senteces =[
 'Little things console us because little things afflict us.'
 ];
 
-
-function getRandomSentence(){
+ function getRandomSentence(){
   let randomNumber = Math.floor(Math.random() * 10);
-  let randomSentences = senteces[randomNumber];
-  typerA.textContent = randomSentences;
-  typerB.textContent = randomSentences;
-//startButton.disabled = false;
+  let randomSentence = senteces[randomNumber];
+  return randomSentence;
 }
+let randomSentence = getRandomSentence();
 
+randomSentenceButton.addEventListener('click',()=>{
+  sentence.textContent = randomSentence ;
+  typerA.textContent = randomSentence;
+  typerB.textContent = randomSentence;
+});
 
-function getTimer(){
-
-  /*|let timer = setTimeout(setInterval(()=>console.log('timer'),1000),10000);
-  clearInterval(timer);*/
-
-/*  typeA.innerHTML
-  setTimeout(()=>{
-    console.log('timeout')
-  },30000);*/
+function startTyping(){
+//  console.log(' randomSentence vvvvv',ranSentence)
 }
+textA.onchange(e,(e)=>{
+console.log()
+
+})
 
 
 
 
 
 
-randomSentenceButton.addEventListener('click', getRandomSentence);
-startButton.addEventListener('click', getTimer);
+console.log(' randomSentence vvvvv',randomSentence)
+
+
+startButton.addEventListener('click',startTyping);
