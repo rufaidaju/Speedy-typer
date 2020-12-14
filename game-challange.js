@@ -35,18 +35,6 @@ randomSentenceButton.addEventListener('click',()=>{
   typerB.textContent = randomSentence;
 });
 
-function startTyping(){
-//  console.log(' randomSentence vvvvv',ranSentence)
-}
-textA.onchange(e,(e)=>{
-console.log()
-
-})
-
-
-
-
-
 
 console.log(' randomSentence vvvvv',randomSentence)
 
