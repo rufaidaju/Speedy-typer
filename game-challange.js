@@ -49,6 +49,7 @@ function getTimer(){
   endButton.addEventListener('click', ()=>{
     clearInterval(countdowntime);
     document.querySelector(".countdown_starts").innerHTML = "Your speed is " + timerA + " seconds";
+    gameEnds();
 });
 }, 1000);
 
@@ -65,12 +66,14 @@ const timeLimit = timerB * 1000;
       endButton.addEventListener('click', ()=>{
         clearInterval(countdowntime);
         document.querySelector(".countdown").innerHTML = "Your speed is " + timerB + " seconds";
+        gameEnds();
     });
 }, 1000);
-gameEnds();
+
 }
 
 function gameEnds(){
+
 if(timerA<timerB){
   gameInfo.textContent="WINNER: typer A";
   var confettiSettings = {
