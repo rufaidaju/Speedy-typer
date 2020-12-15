@@ -1,16 +1,12 @@
 "use strict"
-
 const randomSentenceButton = document.getElementById('randomSentence');
-const startButton = document.getElementById('startButton');
 const typerA = document.getElementById('typer_a');
 const typerB = document.getElementById('typer_b');
-const typeA=document.getElementById('typeA');
-const typeB = document.getElementById('typeB');
 const sentence = document.getElementById('sentence');
-const textA = document.getElementById('typer_a');
 const startA = document.getElementById('start-a');
 const startB = document.getElementById('start-b');
-
+const Atimer = document.getElementById('a-timer');
+const Btimer = document.getElementById('b-timer');
 
 const senteces =[
 'Everything happens for me, not to me.',
@@ -25,7 +21,7 @@ const senteces =[
 'Little things console us because little things afflict us.'
 ];
 
- function getRandomSentence(){
+function getRandomSentence(){
   let randomNumber = Math.floor(Math.random() * 10);
   let randomSentence = senteces[randomNumber];
   return randomSentence;
@@ -35,27 +31,32 @@ let randomSentence = getRandomSentence();
 randomSentenceButton.addEventListener('click',()=>{
   sentence.textContent = randomSentence ;
   typerA.setAttribute('placeholder',randomSentence);
-  typerB.textContent = randomSentence;
+  typerB.setAttribute('placeholder',randomSentence);
 });
 
 let matching = false;
-function matchSentence(){
-  let x = typerA.value;
-  return x >= randomSentence ? matching = true :false;
+function matchSentence(param){
+  let x = param.value;
+  return x === randomSentence ? matching = true :false;
 }
-startA.addEventListener('click',()=>{
-  let timerA = 0;
+
+function addTimer(typer){
+  let timer = 0;
   let aInterval=setInterval(()=> {
-    timerA = timerA+1;
-    document.getElementById('a-timer').innerHTML =`${timerA}`;
+    timer = timer+1;
+    typer.innerHTML =`${timer}`;
     if (matching){
       clearInterval(aInterval);
+      matching = false;
     }
-
   },1000);
+}
+
+startA.addEventListener('click',()=>{
+  addTimer(Atimer);
+  startA.disabled = 'disabled';
 })
-
-console.log(' randomSentence vvvvv',randomSentence)
-
-
-// startButton.addEventListener('click',startTyping);
+startB.addEventListener('click',()=>{
+  addTimer(Btimer);
+  startB.disabled = 'disabled';
+})
