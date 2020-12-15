@@ -1,45 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <title>Speedy Typer</title>
-  <link rel="stylesheet" href="styles-challenge.css">
-  </link>
-
+  <link rel="stylesheet" href="styles-challenge.css"></link>
 </head>
-
 <body>  
   <h1>Speedy Typer</h1>
-
   <div class="buttons">
     <button type="button" name="button" id="randomSentence">Random Sentence</button>
   </div>
-
   <h2  id="sentence"></h2>
-
   <div class="typers">
     <div class="typer1">
       <label for="typer_a">Typer A</label>
-      <textarea id="typer_a" name="typer_a" rows="4" cols="50" placeholder="" oninput="matchSentence()"></textarea>
-      <p id="typeA"></p>
+      <textarea id="typer_a" name="typer_a" rows="4" cols="50" placeholder="" oninput="matchSentence(this)"></textarea>
       <button id="start-a">Start A</button>
       <p id="a-timer">Timer for A :</p>
     </div>
     <div class="typer2">
       <label for="typer_b">Typer B</label>
-      <textarea id="typer_b" name="typer_b" rows="4" cols="50" placeholder=""></textarea>
-      <p id="typeB"></p>
+      <textarea id="typer_b" name="typer_b" rows="4" cols="50" placeholder="" oninput="matchSentence(this)"></textarea>
       <button id="start-b">Start B</button>
-
+      <p id="b-timer">Timer for B :</p>
     </div>
   </div>
-
   <div class="restart_button">
-    <button type="button" name="button" id="reStartButton" disabled>Restart Button</button>
+    <button onClick="window.location.reload();">Restart</button>
   </div>
-
   <script src="game-challange.js"></script>
 </body>
-
 </html>
