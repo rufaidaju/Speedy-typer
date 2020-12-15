@@ -6,31 +6,61 @@
     box-sizing: border-box;
     /* creat a border box */
   }
-  
-  h1{
+
+  body{
     font-style: italic;
+    text-align: center;
+    background-color: #551A8B; /*#4633FF;*/
+    color: white;
+  }
+
+  h1{
     font-family: cursive;
-    font-size: 28px;
+    font-size: 38px;
+    color: #AB82FF;
     text-align: center;
     padding-top: 50px;
   }
-  
-  .buttons, .restart_button {
+
+  .buttons{
   text-align: center;
   padding: 50px 0px;
+  }
+  #randomSentence, #startButton, #startButton-two, #endButton, #reStartButton{
+    background-color: #AB82FF;
+  }
+  #randomSentence:hover, #startButton:hover, #startButton-two:hover, #endButton:hover, #reStartButton:hover {
+  background-color: #68228B;
+  transition-duration: 0.8s;
   }
   .typers{
     display: flex;
   justify-content: center;
-  
+
   }
   .typer1,.typer2{
     display: flex;
     flex-direction: column;
     padding: 30px;
-    border-top: 1px solid black;
+    border-top: 2px solid black;
   }
   .typer1{
-    border-right: 1px solid black;
+    border-right: 2px solid black;
   }
-  
+  #typer_a, #typer_b{
+    background-color: #AB82FF;
+  }
+  #my-canvas-one, #my-canvas-two {
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    top: 300px;
+  }
+
+  #my-canvas-one {
+    left: 450px;
+  }
+
+  #my-canvas-two {
+    right: 400px;
+  }
