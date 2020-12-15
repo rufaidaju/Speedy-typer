@@ -2,10 +2,15 @@
 
 const randomSentenceButton = document.getElementById('randomSentence');
 const startButton = document.getElementById('startButton');
+const startButtonTwo = document.getElementById('startButton-two');
+const gameInfo = document.getElementById('game_info');
 const typerA = document.getElementById('typer_a');
 const typerB = document.getElementById('typer_b');
 const typeA=document.getElementById('typeA');
 const typeB=document.getElementById('typeB');
+const endButton=document.getElementById('endButton');
+const restart_button = document.getElementById('reStartButton');
+
 
 const senteces =[
 'Everything happens for me, not to me.',
@@ -21,30 +26,80 @@ const senteces =[
 ];
 
 
+
+
+
 function getRandomSentence(){
   let randomNumber = Math.floor(Math.random() * 10);
   let randomSentences = senteces[randomNumber];
   typerA.textContent = randomSentences;
   typerB.textContent = randomSentences;
-//startButton.disabled = false;
+startButton.disabled = false;
+startButtonTwo.disabled =false;
 }
 
-
+let timerA;
+function gameStartsUserA(){
+timerA =0;
+const timeLimit = timerA * 1000;
+    let countdowntime = setInterval(
 function getTimer(){
+  document.querySelector(".countdown_starts").innerHTML = "Your Timer starts now: " + timerA + " seconds";
+  timerA++;
+  endButton.addEventListener('click', ()=>{
+    clearInterval(countdowntime);
+    document.querySelector(".countdown_starts").innerHTML = "Your speed is " + timerA + " seconds";
+});
+}, 1000);
 
-  /*|let timer = setTimeout(setInterval(()=>console.log('timer'),1000),10000);
-  clearInterval(timer);*/
+}
 
-/*  typeA.innerHTML
-  setTimeout(()=>{
-    console.log('timeout')
-  },30000);*/
+let timerB;
+function gameStartsUserB(){
+ timerB =0;
+const timeLimit = timerB * 1000;
+    let countdowntime = setInterval(
+    function getTimer(){
+      document.querySelector(".countdown").innerHTML = "Your Timer starts now: " + timerB + " seconds";
+      timerB++;
+      endButton.addEventListener('click', ()=>{
+        clearInterval(countdowntime);
+        document.querySelector(".countdown").innerHTML = "Your speed is " + timerB + " seconds";
+    });
+}, 1000);
+gameEnds();
+}
+
+function gameEnds(){
+if(timerA<timerB){
+  gameInfo.textContent="WINNER: typer A";
+  var confettiSettings = {
+        target: 'my-canvas-one'
+      };
+      var confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+}
+else if(timerA>timerB){
+  gameInfo.textContent="WINNER: typer B";
+  var confettiSettings = {
+      target: 'my-canvas-two'
+    };
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+} else if (timerA === timerB) {
+    gameInfo.innerHTML = "Its a Tie ";
+
+}
 }
 
 
 
-
+function restartTheGame() {
+  document.location.href = "";
+}
 
 
 randomSentenceButton.addEventListener('click', getRandomSentence);
-startButton.addEventListener('click', getTimer);
+startButton.addEventListener('click', gameStartsUserA);
+startButtonTwo.addEventListener('click', gameStartsUserB);
+restart_button.addEventListener("click", restartTheGame);
