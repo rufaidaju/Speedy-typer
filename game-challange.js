@@ -17,24 +17,21 @@ const senteces =[
 'You know, there are two good things in life,freedom of thought and freedom of action.',
 'The greatest effort is not concerned with results.',
 'Neither seek nor avoid, take what comes','Direction matters more than speed.',
-'You always admire what you really don’t understand.',
+"You always admire what you really don't understand.",
 'Little things console us because little things afflict us.'
 ];
 
 function getRandomSentence(){
   let randomNumber = Math.floor(Math.random() * 10);
   let randomSentence = senteces[randomNumber];
-  return randomSentence;
-}
-let randomSentence = getRandomSentence();
-
-randomSentenceButton.addEventListener('click',()=>{
   sentence.textContent = randomSentence ;
   typerA.setAttribute('placeholder',randomSentence);
   typerB.setAttribute('placeholder',randomSentence);
-});
-
+  return randomSentence;
+}
+let randomSentence = getRandomSentence();
 let matching = false;
+
 function matchSentence(param){
   let x = param.value;
   return x === randomSentence ? matching = true :false;
