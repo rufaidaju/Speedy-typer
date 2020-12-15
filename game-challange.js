@@ -34,24 +34,28 @@ let randomSentence = getRandomSentence();
 
 randomSentenceButton.addEventListener('click',()=>{
   sentence.textContent = randomSentence ;
-  typerA.textContent = randomSentence;
+  typerA.setAttribute('placeholder',randomSentence);
   typerB.textContent = randomSentence;
 });
 
+let matching = false;
 function matchSentence(){
   let x = typerA.value;
-  typeA.innerHTML = "You wrote: " + x;
-  x >= randomSentence ? true :false;
+  return x >= randomSentence ? matching = true :false;
 }
 startA.addEventListener('click',()=>{
-  setInterval((timerA)=> timerA+1,1000);
-  if (matchSentence){
-    clearInterval****************
-  }
-  
+  let timerA = 0;
+  let aInterval=setInterval(()=> {
+    timerA = timerA+1;
+    document.getElementById('a-timer').innerHTML =`${timerA}`;
+    if (matching){
+      clearInterval(aInterval);
+    }
+
+  },1000);
 })
 
 console.log(' randomSentence vvvvv',randomSentence)
 
 
-startButton.addEventListener('click',startTyping);
+// startButton.addEventListener('click',startTyping);
