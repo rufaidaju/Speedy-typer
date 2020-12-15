@@ -11,7 +11,10 @@
 
 <div class="buttons">
 <button type="button" name="button" id="randomSentence">Random Sentence</button>
-<button type="button" name="button" id="startButton" disabled>Start Button</button>
+<button type="button" name="button" id="startButton" disabled>Typer-A Start</button>
+<button type="button" name="button" id="startButton-two" disabled>Typer-B Start</button>
+<button type="button" name="button" id="endButton">End Game</button>
+<h2 id="game_info"></h2>
 </div>
 
 <div class="typers">
@@ -20,21 +23,29 @@
 <label for="typer_a">Typer A</label>
 <textarea id="typer_a" name="typer_a" rows="4" cols="50" placeholder="">
 </textarea>
-<p id="typeA"></p>
+<h4 class="countdown_starts"></h4>
+<h3 id="typeA"></h3>
 </div>
 
 <div class="typer2">
 <label for="typer_b">Typer B</label>
 <textarea id="typer_b" name="typer_b" rows="4" cols="50" placeholder="">
 </textarea>
-<p id="typeB"></p>
+<h4 class="countdown"></h4>
+<h3 id="typeB"></h3>
 </div>
 
 </div>
-<div class="restart_button">
-<button type="button" name="button" id="reStartButton" disabled>Restart Button</button>
+<div class="buttons">
+<button type="button" name="button" id="reStartButton">Restart Button</button>
 </div>
 
+</div>
+      <canvas id="my-canvas-one"></canvas>
+      <canvas id="my-canvas-two"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
 <script src="game-challange.js"></script>
   </body>
 </html>
