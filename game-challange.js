@@ -8,6 +8,9 @@ const typeA=document.getElementById('typeA');
 const typeB = document.getElementById('typeB');
 const sentence = document.getElementById('sentence');
 const textA = document.getElementById('typer_a');
+const startA = document.getElementById('start-a');
+const startB = document.getElementById('start-b');
+
 
 const senteces =[
 'Everything happens for me, not to me.',
@@ -35,6 +38,18 @@ randomSentenceButton.addEventListener('click',()=>{
   typerB.textContent = randomSentence;
 });
 
+function matchSentence(){
+  let x = typerA.value;
+  typeA.innerHTML = "You wrote: " + x;
+  x >= randomSentence ? true :false;
+}
+startA.addEventListener('click',()=>{
+  setInterval((timerA)=> timerA+1,1000);
+  if (matchSentence){
+    clearInterval****************
+  }
+  
+})
 
 console.log(' randomSentence vvvvv',randomSentence)
 
