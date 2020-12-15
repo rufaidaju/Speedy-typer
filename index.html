@@ -14,7 +14,6 @@
 
   <div class="buttons">
     <button type="button" name="button" id="randomSentence">Random Sentence</button>
-    <button type="button" name="button" id="startButton">Start Button</button>
   </div>
 
   <h2  id="sentence"></h2>
@@ -22,9 +21,10 @@
   <div class="typers">
     <div class="typer1">
       <label for="typer_a">Typer A</label>
-      <textarea id="typer_a" name="typer_a" rows="4" cols="50" placeholder="" oninput="()"></textarea>
+      <textarea id="typer_a" name="typer_a" rows="4" cols="50" placeholder="" oninput="matchSentence()"></textarea>
       <p id="typeA"></p>
       <button id="start-a">Start A</button>
+      <p id="a-timer">Timer for A :</p>
     </div>
     <div class="typer2">
       <label for="typer_b">Typer B</label>
