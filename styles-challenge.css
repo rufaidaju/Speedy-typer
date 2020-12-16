@@ -5,32 +5,63 @@
     /* for page remove padding */
     box-sizing: border-box;
     /* creat a border box */
+    -webkit-box-sizing: border-box;
   }
-
+img{
+  height: auto;
+}
   body{
     font-style: italic;
     text-align: center;
-    background-color: #551A8B; /*#4633FF;*/
-    color: white;
+    font-size: 28px;
+  background-color: #1B2631 ; /*#4633FF;*/
+    color: #1ABC9C;
   }
 
   h1{
     font-family: cursive;
-    font-size: 38px;
-    color: #AB82FF;
+    color: #A9CCE3 ;
     text-align: center;
     padding-top: 50px;
   }
+  h2{
+    color: #1ABC9C ;
+    font-family: cursive;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  img{
+    bottom: -50px;
+    right: 200px;
+    position:absolute;
+  }
+  button {
+   border: none;
+  background-color: #FF7373;
+  box-shadow: 0px 5px 0px 0px #CE4646;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.buttons, .restart_button {
+text-align: center;
+padding: 50px 0px;
+}
+button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
 
-  .buttons{
-  text-align: center;
-  padding: 50px 0px;
-  }
-  #randomSentence, #startButton, #startButton-two, #endButton, #reStartButton{
-    background-color: #AB82FF;
-  }
-  #randomSentence:hover, #startButton:hover, #startButton-two:hover, #endButton:hover, #reStartButton:hover {
-  background-color: #68228B;
+  #start-a:hover, #start-b:hover, #restartButton:hover {
+  background-color: pink;
   transition-duration: 0.8s;
   }
   .typers{
@@ -48,19 +79,12 @@
     border-right: 2px solid black;
   }
   #typer_a, #typer_b{
-    background-color: #AB82FF;
-  }
-  #my-canvas-one, #my-canvas-two {
-    width: 200px;
-    height: 250px;
-    position: absolute;
-    top: 300px;
-  }
-
-  #my-canvas-one {
-    left: 450px;
-  }
-
-  #my-canvas-two {
-    right: 400px;
+    border: 3px solid #cccccc;
+    border-color: #CE4646;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0px 3px 0px 0px #CE4646;
+    background-color: #FF7373;
+    color: #fff;
+    font-size: 15px;
   }
