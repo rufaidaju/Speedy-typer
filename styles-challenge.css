@@ -11,34 +11,33 @@ img{
   height: auto;
 }
   body{
+    background-image: url("backgroung-image.jpg");
     font-style: italic;
     text-align: center;
-    font-size: 28px;
-  background-color: #1B2631 ; /*#4633FF;*/
-    color: #1ABC9C;
+   font-size: 28px;
+  /*background-color: #FEF5E7  ; #4633FF;*/
+    color: #2C3E50;
   }
 
   h1{
-    font-family: cursive;
-    color: #A9CCE3 ;
+    font-family: sans-serif;
+
+    color: #17202A  ;
     text-align: center;
     padding-top: 50px;
   }
   h2{
-    color: #1ABC9C ;
+    color: #212F3D ;
+    font-size: 24px;
     font-family: cursive;
     text-align: center;
     padding-bottom: 10px;
   }
-  img{
-    bottom: -50px;
-    right: 200px;
-    position:absolute;
-  }
+  
   button {
    border: none;
-  background-color: #FF7373;
-  box-shadow: 0px 5px 0px 0px #CE4646;
+  background-color: #2C3E50;
+  box-shadow: 0px 5px 0px 0px #1C2833;
   outline: none;
   border-radius: 5px;
   padding: 10px 15px;
@@ -49,6 +48,8 @@ img{
   position: relative;
   display: inline-block;
   cursor: pointer;
+  color: #FEF5E7;
+
 }
 .buttons, .restart_button {
 text-align: center;
@@ -61,7 +62,7 @@ button:active {
 }
 
   #start-a:hover, #start-b:hover, #restartButton:hover {
-  background-color: pink;
+  background-color: #D5D8DC;
   transition-duration: 0.8s;
   }
   .typers{
@@ -79,12 +80,12 @@ button:active {
     border-right: 2px solid black;
   }
   #typer_a, #typer_b{
-    border: 3px solid #cccccc;
-    border-color: #CE4646;
+    border: 1px solid #1C2833;
+    border-color: #1C2833;
     border-radius: 5px;
     outline: none;
-    box-shadow: 0px 3px 0px 0px #CE4646;
-    background-color: #FF7373;
-    color: #fff;
+    box-shadow: 0px 5px 0px 0px #1C2833;
+    background-color: #ABB2B9 ;
+    color: black;
     font-size: 15px;
   }
