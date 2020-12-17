@@ -31,30 +31,61 @@ function getRandomSentence(){
 }
 let randomSentence = getRandomSentence();
 let matching = false;
-
+let timer1;
+let timer2;
 function matchSentence(param){
   let x = param.value;
   return x === randomSentence ? matching = true :false;
 }
 
-function addTimer(typer){
-  let timer = 0;
-  let aInterval=setInterval(()=> {
-    timer = timer+1;
-    typer.innerHTML =`${timer}`;
+function addTimerA(typer){
+    timer1=0;
+    let aInterval=setInterval(()=> {
+    timer1 = timer1+1;
+    typer.innerHTML =`${timer1}`;
     if (matching){
       clearInterval(aInterval);
+      gameEnds();
       matching = false;
-    }
+            }
+
+  },1000);
+}
+
+function addTimerB(typer){
+    timer2=0;
+    let aInterval=setInterval(()=> {
+    timer2 = timer2+1;
+    typer.innerHTML =`${timer2}`;
+    if (matching){
+      clearInterval(aInterval);
+      gameEnds();
+      matching = false;
+            }
+
   },1000);
 
 }
 
+function gameEnds(){
+if(timer1<timer2){
+  sentence.textContent="WINNER is Typer A";
+sentence.style.color = "green";
+}
+else if(timer1>timer2){
+  sentence.textContent="WINNER is Typer B";
+sentence.style.color = "green";
+}
+ else if (timer1 === timer2) {
+    sentence.innerHTML = "It's a Tie ";
+  sentence.style.color = "green";
+}
+}
 startA.addEventListener('click',()=>{
-  addTimer(aTimer);
+  addTimerA(aTimer);
   startA.disabled = 'disabled';
 })
 startB.addEventListener('click',()=>{
-  addTimer(bTimer);
+  addTimerB(bTimer);
   startB.disabled = 'disabled';
 })
