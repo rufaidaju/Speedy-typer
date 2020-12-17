@@ -11,7 +11,7 @@ img{
   height: auto;
 }
   body{
-    background-image: url("backgroung-image.jpg");
+    background-image: url("alphabets-falling.jpg");
     font-style: italic;
     text-align: center;
    font-size: 28px;
@@ -33,7 +33,7 @@ img{
     text-align: center;
     padding-bottom: 10px;
   }
-  
+
   button {
    border: none;
   background-color: #2C3E50;
@@ -79,7 +79,8 @@ button:active {
   .typer1{
     border-right: 2px solid black;
   }
-  #typer_a, #typer_b{
+  
+  #typer_a, #typer_b {
     border: 1px solid #1C2833;
     border-color: #1C2833;
     border-radius: 5px;
