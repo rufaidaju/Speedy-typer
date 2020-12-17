@@ -68,20 +68,24 @@ function addTimerB(typer){
 }
 
 function gameEnds(){
+document.querySelector(".enter").style.display ="none";
 if(timer1<timer2){
-document.querySelector('#sentence').insertAdjacentHTML('beforeend',`<p class="the-winner">The winner is A typer with ${timer1}Second</p>
-<p class="the-winner">B lost with ${timer2}Seconds</p>
-<img class="winner-img" src="giphy.webp"  alt="The winner"/>`);
-sentence.style.color = "green";
-}
-else if(timer1>timer2){
-document.querySelector('#sentence').insertAdjacentHTML('beforeend',`<p class="the-winner">The winner is B typer with ${timer2}Second</p>
-<p class="the-winner">A lost with ${timer2}Seconds</p>
+sentence.textContent = `The winner is A-typer with ${timer1} Second`
+document.querySelector('#sentence').insertAdjacentHTML('beforeend',`
+  <p class="the-winner"> B-typer lost with ${timer2} Second</p>
   <img class="winner-img" src="giphy.webp"  alt="The winner"/>`);
 sentence.style.color = "green";
+
+}
+else if(timer1>timer2){
+  sentence.textContent = `The winner is B-typer with ${timer1} Second`
+  document.querySelector('#sentence').insertAdjacentHTML('beforeend',`
+    <p class="the-winner"> A-typer lost with ${timer2} Second</p>
+    <img class="winner-img" src="giphy.webp"  alt="The winner"/>`);
+  sentence.style.color = "green";
 }
  else if (timer1 === timer2) {
-  document.querySelector('#sentence').insertAdjacentHTML('beforeend',`<p class="the-winner"> It's a Tie you both typed during ${timer1}Second </p>`);
+  sentence.textContent = `It's a Tie you both typed during ${timer1} Second`;
   sentence.style.color = "green";
 }
 }
