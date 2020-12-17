@@ -77,11 +77,11 @@ function gameEnds() {
     document.querySelector(".typers").style.display = "none";
     document.querySelector(".enter").style.display = "none";
   } else if (timer1 > timer2) {
-    sentence.textContent = `The winner is B-typer with ${timer1} Second`;
+    sentence.textContent = `The winner is B-typer with ${timer2} Second`;
     document.querySelector("#sentence").insertAdjacentHTML(
       "beforeend",
       `
-    <p class="the-winner"> A-typer lost with ${timer2} Second</p>
+    <p class="the-winner"> A-typer lost with ${timer1} Second</p>
     <img class="winner-img" src="giphy.webp"  alt="The winner"/>`
     );
     document.querySelector(".typers").style.display = "none";
