@@ -35,14 +35,13 @@ img{
     font-family: cursive;
     text-align: center;
     padding: 10px;
-    border: 2px black solid;
+    /* border: 2px black solid; */
     display: inline-block;
-    margin-bottom: 23px;
+   margin:30px;
   }
-  .winner{
-    display: none;
-  }
-   
+  .winner-img{
+    margin: 20px;
+  } 
   button {
   border: none;
   background-color: #2C3E50;
