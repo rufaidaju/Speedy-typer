@@ -39,6 +39,9 @@ img{
     display: inline-block;
     margin-bottom: 23px;
   }
+  .winner{
+    display: none;
+  }
    
   button {
   border: none;
