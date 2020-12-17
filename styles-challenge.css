@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    /* for page remove margin  */
+    padding: 0px;
+    /* for page remove padding */
+    box-sizing: border-box;
+    /* creat a border box */
+    -webkit-box-sizing: border-box;
+  }
+img{
+  height: auto;
+}
+  body{
+    background-image: url("alphabets-falling.jpg");
+    font-style: italic;
+    text-align: center;
+   font-size: 28px;
+  /*background-color: #FEF5E7  ; #4633FF;*/
+    color: #2C3E50;
+  }
+
+  h1{
+    font-family: sans-serif;
+
+    color: #17202A  ;
+    text-align: center;
+    padding-top: 50px;
+  }
+  h2{
+    color: #212F3D ;
+    font-size: 24px;
+    font-family: cursive;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  button {
+   border: none;
+  background-color: #2C3E50;
+  box-shadow: 0px 5px 0px 0px #1C2833;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: #FEF5E7;
+
+}
+.buttons, .restart_button {
+text-align: center;
+padding: 50px 0px;
+}
+button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+  #start-a:hover, #start-b:hover, #restartButton:hover {
+  background-color: #D5D8DC;
+  transition-duration: 0.8s;
+  }
+  .typers{
+    display: flex;
+  justify-content: center;
+
+  }
+  .typer1,.typer2{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-top: 2px solid black;
+  }
+  .typer1{
+    border-right: 2px solid black;
+  }
+  
+  #typer_a, #typer_b {
+    border: 1px solid #1C2833;
+    border-color: #1C2833;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0px 5px 0px 0px #1C2833;
+    background-color: #ABB2B9 ;
+    color: black;
+    font-size: 15px;
+  }
